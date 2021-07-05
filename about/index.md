@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, lajancia, resume]
+title: Resume
+tags: [Jekyll, lajancia, resume]
 date: 2021-07-05
 comments: false
 ---
