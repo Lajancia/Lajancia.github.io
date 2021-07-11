@@ -6,9 +6,9 @@ excerpt: "Micro-frontend 아키텍쳐와 구축을 위한 Single-SPA와 Vue 프�
 project: true
 tag:
   - spa
-  - seo
+  - micro-frontend
   - Single-spa
-  - issue
+  - vue
 ---
 
 # **Micro-frontend & Single-SPA**
