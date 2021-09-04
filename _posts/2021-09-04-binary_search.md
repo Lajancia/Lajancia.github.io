@@ -2,7 +2,7 @@
 layout: post
 title: "이진탐색"
 date: 2021-09-04
-excerpt: "파이썬 이진트리"
+excerpt: "파이썬 이진트리에 대한 간단 개념 설명"
 tags: [백준, 파이썬, 알고리즘, 이진탐색]
 comments: false
 ---
