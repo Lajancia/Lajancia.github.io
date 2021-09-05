@@ -11,14 +11,17 @@ layout: compress
 
 <head>
     {% include head.html %}
+    <h1>head밑</h1>
 </head>
 
 <body>
     {% include nav.html %}
+    <h1>nav 밑</h1>
     <!-- Header -->
     <header class="header" role="banner">
         <div class="wrapper animated fadeIn">
             {% include resume.html %}
+            <h1>resume 밑</h1>
         </div>
         {% if page.comments and site.disqus_shortname %}<section id="disqus_thread" class="animated fadeInUp"></section>
         <!-- /#disqus_thread -->{% endif %}
