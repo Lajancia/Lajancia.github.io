@@ -19,8 +19,8 @@ layout: compress
     
     <!-- Header -->
     <header class="header" role="banner">
-        <meta charset="UTF-8">
-        <title>Lajancia 원페이지 이력서</title>
+        <!-- <meta charset="UTF-8"> -->
+        <!-- <title>Lajancia 원페이지 이력서</title> -->
         <!-- <link rel="stylesheet" href="css/default.min.css"> -->
         <div class="wrapper animated fadeIn">
             
@@ -31,6 +31,9 @@ layout: compress
                             <div class="my_photo">
                                 <span>
                                     <img src="img/11.jpg" style="width:160px;" alt="정우성">
+                                    <a class="btn zoombtn" href="{{site.url}}">
+                                        <i class="fa fa-home"></i>
+                                    </a>
                                 </span>
                             </div>
                             <div class="my_info">
@@ -98,7 +101,7 @@ layout: compress
         {% if page.comments and site.disqus_shortname %}<section id="disqus_thread" class="animated fadeInUp"></section>
         <!-- /#disqus_thread -->{% endif %}
     </header>
-    
+    {% include scripts.html %}
     {% if site.mathjax == true %}
     <!-- MathJax -->
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
