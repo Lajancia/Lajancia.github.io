@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Vue.js+Node.js 웹페이지 만들기"
+title: "1. Vue.js+Node.js 웹페이지 만들기"
 date: 2021-09-26
 excerpt: "프론트엔드 백엔드를 각각 구현하여 연결해보는 풀스텍 프로젝트를 진행해본다."
 project: true
