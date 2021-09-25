@@ -3,6 +3,7 @@ layout: post
 title: "2. vue.js + node.js 웹페이지 만들기"
 date: 2021-09-27
 excerpt: "1에서 구현한 vue 프론트엔드를 기반으로 express-generator를 통해 백엔드 서버와 연결해보도록 한다"
+project: true
 tag:
   - nodejs
   - vue

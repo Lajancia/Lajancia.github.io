@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: lajancia.github.io/sitemap.xml
+Sitemap: http://lajancia.github.io/sitemap.xml
