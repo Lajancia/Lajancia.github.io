@@ -2,7 +2,7 @@
 layout: post
 title: "1. 이더리움 시작하기"
 date: 2021-10-07
-excerpt: "이더리움을 이용하기 위한 초기 세팅 진행"
+excerpt: "이더리움을 이용하기 위한 초기 세팅 진행. 트러플 이용"
 project: true
 tag:
   - 이더리움
@@ -12,9 +12,7 @@ tag:
 
 # 1. 이더리움 시작하기-초급
 
----
-
-### 기초 정리 참고
+## 기초 정리 참고
 
 [[무료] 이더리움 입문 바이블: 모든 이더리움 입문자를 위하여 - 인프런 | 강의](https://www.inflearn.com/course/ethereum-bible/dashboard)
 
