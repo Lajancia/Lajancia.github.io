@@ -1,8 +1,6 @@
 ---
 layout: Record
-title: Record
-data: 2021-11-08
+title: All Projects
+excerpt: "A List of private record"
 comments: false
 ---
-
-test
