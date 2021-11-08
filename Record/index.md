@@ -1,6 +1,6 @@
 ---
 layout: Record
-title: All Records
-excerpt: "A List of private record"
+title: All private records
+excerpt: "A List of records"
 comments: false
 ---
