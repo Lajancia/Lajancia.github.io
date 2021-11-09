@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "블랜더 단축키 정리 - 업데이트"
+title: "2. blender 단축키 정리 - 업데이트"
 date: 2021-10-19
 excerpt: "blender 단축키 설명"
+Blender: true
 tags: [blender, key]
 comments: false
 ---
