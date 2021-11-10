@@ -3,6 +3,7 @@ layout: post
 title: "2. 이더리움 시작하기"
 date: 2021-10-08
 excerpt: "이더리움을 이용하기 위한 트러플 사용"
+Blockchain: true
 project: true
 tag:
   - 이더리움
