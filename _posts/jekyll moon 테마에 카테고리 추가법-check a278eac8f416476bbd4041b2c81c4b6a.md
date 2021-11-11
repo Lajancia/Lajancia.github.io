@@ -9,13 +9,15 @@ comments: false
 
 # jekyll moon 테마에 카테고리 추가법
 
+2021-11-09
+
 ---
 
 > 여러 사이트를 찾아보아도 제대로 카테고리 추가와 포스트 작성에 대한 설명이 없어서 직접 찾아낸 방법 작성하였다. 제대로된 방법인지는 잘 모르겠지만 작동은 잘 되니 그냥 사용한다.
 
 ## 1. \_data>navigation.yml에 사이트 네비게이션 추가
 
-```python
+```
 - title: Blender
   url: /Blender/
 ```
@@ -25,7 +27,9 @@ comments: false
 ## 2. \_layouts 파일 내부에 카테코리 html 생성
 
 ```html
+---
 layout: compress
+---
 
 <!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -86,8 +90,12 @@ layout: compress
 상위폴더>Blender폴더>index.md 생성
 
 ```
-layout: Blender title: Blender studies excerpt: "Studying blender" comments:
-false
+---
+layout: Blender
+title: Blender studies
+excerpt: "Studying blender"
+comments: false
+---
 ```
 
 - layout은 꼭 설정한 카테고리 명과 똑같이 해주어야 한다.
@@ -95,9 +103,15 @@ false
 ## 4. post 작성
 
 ```
-layout: post title: "2. blender 단축키 정리 - 업데이트" date: 2021-10-19
-excerpt: "blender 단축키 설명" Blender: true tags: [blender, key] comments:
-false
+---
+layout: post
+title: "2. blender 단축키 정리 - 업데이트"
+date: 2021-10-19
+excerpt: "blender 단축키 설명"
+Blender: true
+tags: [blender, key]
+comments: false
+---
 ```
 
 - 기존의 post 카테고리에도 마크다운을 포함시킬 것이라면 layout: post를 추가하고, 그것이 아니라면 쓰지 않아도 된다.
