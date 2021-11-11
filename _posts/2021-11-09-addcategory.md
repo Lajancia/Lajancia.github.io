@@ -1,3 +1,12 @@
+---
+layout: post
+title: "jekyll moon 테마에 카테고리 추가법"
+date: 2021-11-09
+excerpt: "jekyll moon 테마에서 원하는 카테고리를 새로 생성하고 마크다운을 등록하는 법 정리."
+tags: [jekyll, blog]
+comments: false
+---
+
 # jekyll moon 테마에 카테고리 추가법-check
 
 2021-11-09
