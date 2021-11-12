@@ -18,5 +18,7 @@ comments: false
 
 [Notion 페이지에서 확인하기](https://www.notion.so/Opensea-NFT-check-ef950f41f725446094acce146d5ad113)
 
+- 자세한 사용법은 노션에 대신 설명을 올려두었다.
+
 - 기존의 post 카테고리에도 마크다운을 포함시킬 것이라면 layout: post를 추가하고, 그것이 아니라면 쓰지 않아도 된다.
 - Blender 카테고리에 포함시키기 위해서는 위와 같이 `Blender:true` 라고 작성해야 한다.
