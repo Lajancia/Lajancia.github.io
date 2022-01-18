@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure 900 - 4"
-date: 2021-11-11
+date: 2022-01-11
 excerpt: "azure 아키텍쳐 구성 요소, compute 서비스"
 tags: [azure, ms, az-900]
 comments: false
