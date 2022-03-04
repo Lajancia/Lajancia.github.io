@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Hacking-1"
-date: 2027-01-01
-excerpt: "해킹은 독학이 가능한 것일까?"
-tags: [study, security, hack]
+title: "Azure 900 - 11"
+date: 2022-01-29
+excerpt: "구독, 비용계산, 지원, SLA"
+tags: [azure, ms, az-900]
 comments: false
 ---
 
