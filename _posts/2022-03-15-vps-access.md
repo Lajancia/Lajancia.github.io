@@ -22,7 +22,7 @@ tag:
 
 ### 해결방법
 
-```jsx
+```
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
