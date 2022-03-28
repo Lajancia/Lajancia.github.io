@@ -34,7 +34,7 @@ tag:
 //루트 디랙토리에 있는 파일들이 페이지를 새로고침해도 404 에러가 뜨지 않게 리다이랙트 해주는 코드
 ```
 
-```jsx
+```
 <IfModule mod_rewrite.c>
 RewriteEngine on
 
@@ -53,7 +53,7 @@ RewriteRule ^(/)?$ dist/index.html [L]
 //위의 코드는 public에서 dist로 루트 파일을 변경하는 .htaccess 코드이다.
 ```
 
-```jsx
+```
 //두 코드를 적절히 잘 섞어서 dist 파일로 root 경로를 설정하는 동시에 리다이랙트로 외부 url을 방문하고 되돌아와도 404에러가 뜨지 않게 만든 코드
 <IfModule mod_rewrite.c>
 RewriteEngine on
