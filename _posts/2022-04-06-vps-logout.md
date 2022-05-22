@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VPS - 5"
+title: "VPS - 4"
 date: 2022-04-06
 excerpt: "VPS 페이지 새로고침 및 logout 이슈 해결"
 project: true
@@ -13,7 +13,7 @@ tag:
   - vuex
 ---
 
-# VPS-5
+# VPS-4
 
 ---
 
