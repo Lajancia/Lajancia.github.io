@@ -1,3 +1,12 @@
+---
+layout: post
+title: "TypeScript Study - 4"
+date: 2023-03-29
+excerpt: "타입스크립트 사용 방법 공부하기"
+tags: [TypeScript, JavaScript]
+comments: false
+---
+
 # 4. Typescript
 
 ---
