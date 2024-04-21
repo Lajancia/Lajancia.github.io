@@ -18,6 +18,15 @@ tag:
 라우팅이 제대로 되었음에도 불구하고 해당 페이지를 새로고침할 경우에는 계속해서 404 에러가 발생하는 것을 확인할 수 있었다. 이는 바닐라 자바스크립트를 통해 구현했기 때문에 발생하는 문제가 아니라 react의 라우터에서도 충분히 발생할 수 있는 문제였다.
 
 결론만 말하자면 webpack devserver에서 별도로 설정해주었어야 할 문제였다.
+```
+  devServer: {
+    historyApiFallback: true,
+    static: path.join(__dirname, 'dist'),
+    port: 9000,
+  },
+};
+```
+다음과 같이 historyApiFallback 설정을 해줘야 한다.
 
 [SPA에서 뒤로가기, 새로고침 시 404 Not Found 오류 해결](https://darrengwon.tistory.com/245)
 
