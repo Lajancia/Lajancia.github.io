@@ -225,12 +225,33 @@ This template is a **personal working memory vault** shaped around one person's 
 
 ---
 
+### **Real-World Experience — It's Not Perfect, and That's OK**
+
+The most important lesson from actually using this template: **Perfect automation doesn't exist.**
+
+Despite defining Morning Briefing and Wrap-up routines, agents sometimes skip them. The vault is the last layer an agent references — when the agent is deep in work, it's easy to miss the briefing. So there are days when I still need to manually trigger "morning briefing" or "wrap up today."
+
+This isn't a limitation of the template. **It's the reality of any knowledge management tool.**
+
+| Reality | Response |
+|---------|----------|
+| Agent occasionally skips Morning Briefing | Manually trigger "morning briefing" — takes one second |
+| Session ends without Wrap-up | `hot.md` preserves last-known state; next session recovers from it |
+| Recording depth is inconsistent | Tweak Working_Style.md to adjust the threshold |
+| Vault gets cluttered | Periodically promote patterns to `Observations.md` and archive old journals |
+
+The key insight: **don't try to craft perfect rules upfront. Use the template, notice friction points, and continuously reflect improvements in `Working_Style.md` and `AGENTS.md`.**
+
+---
+
 ### **Closing Thoughts — The Vault Outlives the Agent**
 
 Claude will keep evolving. Better agents will keep appearing. That doesn't diminish the value of this template — it amplifies it.
 
 **The better agents get, the more important it becomes to keep your knowledge independent of any single one.**
 
-If tomorrow's superior agent has no idea about the context you built in Claude today, it will have to learn everything about you from scratch. This vault bridges that gap. No matter which agent you use — today or five years from now — connecting the vault restores your work context instantly. That's the ultimate purpose of this template.
+If tomorrow's superior agent has no idea about the context you built in Claude today, it will have to learn everything about you from scratch. This vault bridges that gap. No matter which agent you use — today or five years from now — connecting the vault restores your work context instantly.
+
+It's not a silver bullet, but this is how I use AI agents in my work. Acknowledging that it's not perfect is what makes it sustainable in the long run.
 
 > **GitHub**: [github.com/Lajancia/agent-working-memory-template](https://github.com/Lajancia/agent-working-memory-template)
