@@ -9,25 +9,43 @@ lang: en
 
 ### **Introduction**
 
-If you use AI coding agents like Claude, Codex, or Cursor in your daily workflow, you've probably noticed a common frustration: **every session starts from scratch**.
+AI coding agents are evolving fast. Claude now has Memory and session search. Context windows keep growing. Every generation is more capable than the last.
 
-- "This project uses pnpm, not npm."
-- "Please respond in English, and keep it concise."
-- "We decided on this architecture last week."
+But progress creates a new problem.
 
-You end up repeating yourself session after session. AI coding agents have **ephemeral sessions** by default — once a session ends, the context is lost. Different tools (Codex, Claude) each maintain their own chat history, making it hard to move between them seamlessly.
+**Your knowledge becomes agent-dependent.**
 
-**Agent Working Memory Template** was built to solve this. It's a file-based personal working memory vault that gives your AI agents session continuity and lets them accumulate work knowledge automatically.
+What you built up in Claude stays in Claude. Work done in Codex is locked inside Codex sessions. When a better agent comes along tomorrow — and it will — you start over. Re-explain your stack, your preferences, your decisions, your recurring patterns, from scratch.
+
+This template exists for one reason:
+
+> **To centralize your work knowledge in an agent-agnostic way, so no matter which agent you use — today or in the future — connecting the vault gives you immediate continuity.**
+
+Agents are tools. Tools change. But the knowledge and context you've accumulated should outlive any single tool.
 
 ---
 
-### **Problems Addressed**
+### **What This Solves**
 
-| Problem | Symptom |
-|---------|---------|
-| **Session ephemerality** | When tools change or sessions reset, prior context is lost. You repeatedly explain current state, preferred style, and recording boundaries. |
-| **Disconnection between agents** | Codex (code) and Claude (docs/long-context) have different strengths, but each has its own chat history — requiring manual handoffs every time. |
-| **Non-accumulating knowledge** | Meeting notes, decisions, corrections, and recurring solution patterns live only in chat and never become a reusable asset. |
+#### **1. Agent Lock-In**
+
+Claude Memory is useful inside Claude. Session search works within the same agent. Switch to Codex? Move to Cursor? Upgrade to the next-generation agent?
+
+**Knowledge locked inside a specific tool makes migrating to better tools expensive.**
+
+| Situation | Problem |
+|-----------|---------|
+| Claude Memory | Convenient inside Claude, but no other agent can access it |
+| Session search | Sessions don't evaporate, but they're unstructured chat dumps |
+| Agent migration | Every new agent requires re-explaining context from scratch |
+
+#### **2. Context Fragmentation**
+
+The more agents you use in parallel, the more fragmented your context becomes. "This decision was made in Claude, that code was written in Codex..." — everything scattered across different sessions.
+
+#### **3. Unstructured Information**
+
+Even with session search, chat logs are fundamentally unstructured. Decisions, work patterns, and reusable workflows are buried inside message streams, making them hard to reuse without manual extraction.
 
 ---
 
@@ -35,10 +53,12 @@ You end up repeating yourself session after session. AI coding agents have **eph
 
 | Principle | Core Idea |
 |-----------|-----------|
-| **Personal vault first** | Optimized around one person's work style, project status, and preferences. Not designed for multi-user sharing. |
-| **Start with minimal routine** | Morning Briefing and Wrap-up are the default triggers. Tune timing and scope through actual use. |
-| **Explicit sources & uncertainty** | The agent distinguishes files it actually checked from external sources it couldn't access. Unqueried systems are marked "not queried." |
-| **Tiered recording levels** | Must / Should / Maybe / Do not write — four levels to maintain signal-to-noise ratio. |
+| **Agent-Agnostic** | The vault is not tied to any specific agent. Claude, Codex, or any future agent can read and write the same vault |
+| **Centralized** | Context from every session converges in one place. No matter which agent you used, the information stays in the vault |
+| **Personal vault first** | Optimized around one person's work style, project status, and preferences. Not designed for multi-user sharing |
+| **Start with minimal routine** | Morning Briefing and Wrap-up are the default triggers. Tune timing and scope through actual use |
+| **Explicit sources & uncertainty** | The agent distinguishes files it actually checked from external sources it couldn't access. Unqueried systems are marked "not queried" |
+| **Tiered recording levels** | Must / Should / Maybe / Do not write — four levels to maintain signal-to-noise ratio |
 | **Bootability** | `hot.md` serves as a boot cache answering: "where are we now, and what should happen next?" |
 
 ---
@@ -143,6 +163,20 @@ This flow prevents one-off information from becoming a permanent user rule too q
 
 ---
 
+### **Relation to Claude Memory / Session Search**
+
+This template does **not replace** Claude's Memory or session search. It complements them.
+
+| Feature | Strength | Limitation |
+|---------|----------|------------|
+| **Claude Memory** | Fast in-agent reference, auto-learning | Claude-only. No export/portability. Unstructured |
+| **Session Search** | Find past conversations | Unstructured data. Hard to extract decisions/patterns. Agent-dependent |
+| **This Vault** | Agent-agnostic. Structured knowledge. Fully portable | Requires initial setup. Needs routine maintenance |
+
+Using all three together is the most effective approach. Claude Memory for quick in-session reference, this vault for structured long-term preservation, and any agent can connect to it when needed.
+
+---
+
 ### **Referenced Patterns**
 
 | Pattern | Core Idea | Reflection in Template |
@@ -155,13 +189,13 @@ This flow prevents one-off information from becoming a permanent user rule too q
 
 ### **Expected Benefits**
 
-- Less time spent restoring context after a session reset
-- Move between Claude and Codex while using the same context source
-- Decisions and corrections from work are never lost
-- The agent gradually personalizes around your work style
-- Knowledge scattered in chat accumulates into a personal work wiki
+- **Use any agent** — connect the same vault and start working immediately
+- **Free migration** — move from Claude to Codex to a future better agent without losing context
+- **Decisions and corrections survive agent changes**
+- **Centralized context** — even when using multiple agents in parallel
+- **Knowledge scattered across chats accumulates into a personal work wiki**
+- Claude Memory + vault = **short-term reference + long-term preservation** optimized
 - Morning Briefing and Wrap-up keep the vault from going stale
-- Checked sources and unavailable sources are clearly separated
 - A human-readable file structure anyone can inspect, edit, and correct directly
 
 ---
@@ -191,10 +225,12 @@ This template is a **personal working memory vault** shaped around one person's 
 
 ---
 
-### **Closing Thoughts**
+### **Closing Thoughts — The Vault Outlives the Agent**
 
-The Agent Working Memory Template is a practical tool for addressing the biggest weakness of AI coding agents: **session volatility**. Without complex infrastructure or external services, a simple set of Markdown files and an Obsidian vault structure can give AI agents persistent context and self-accumulating knowledge.
+Claude will keep evolving. Better agents will keep appearing. That doesn't diminish the value of this template — it amplifies it.
 
-The guiding philosophy: **"Rather than making perfect rules from the start, refine `Working_Style.md` and `AGENTS.md` based on what feels awkward during actual use."**
+**The better agents get, the more important it becomes to keep your knowledge independent of any single one.**
+
+If tomorrow's superior agent has no idea about the context you built in Claude today, it will have to learn everything about you from scratch. This vault bridges that gap. No matter which agent you use — today or five years from now — connecting the vault restores your work context instantly. That's the ultimate purpose of this template.
 
 > **GitHub**: [github.com/Lajancia/agent-working-memory-template](https://github.com/Lajancia/agent-working-memory-template)
