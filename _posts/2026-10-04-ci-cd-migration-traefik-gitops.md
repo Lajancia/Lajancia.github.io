@@ -173,13 +173,7 @@ GitOps 리포(case-study-ops, next-r3f-ops)를 감시하던 ArgoCD는 그대로 
 
 ### **개편 중 만난 트러블**
 
-**1. NodePort 하드닝 방화벽이 아웃바운드를 죽였다**
-
-k3s NodePort(30000+)를 인터넷에 노출하지 않으려고 iptables raw 테이블 PREROUTING에 "80/443 외 TCP 드롭" 룰을 걸었다. 그런데 이 룰이 **서버 자신의 아웃바운드 연결 응답까지** 드롭했다 — PREROUTING은 아웃바운드 연결의 회신 패킷도 통과하는 지점이기 때문. 게다가 raw 테이블은 conntrack보다 먼저 실행되어 `--ctstate ESTABLISHED` 예외도 매칭이 안 됐다.
-
-결과적으로 github.com 접근이 죽고, Discord가 끊기고, 이걸 "외부 네트워크 문제"로 오해해 Cloudflare 프록시 우회(gh 도메인)까지 만들었다. 최종 해결은 **룰을 mangle 테이블(conntrack 이후)로 옮기고 ESTABLISHED 회신을 통과**시키는 것. 자세한 추적기는 별도 포스트로 정리했다.
-
-**2. GitOps 자기 참조와 상태 일치**
+**GitOps 자기 참조와 상태 일치**
 
 Application이 자신의 소스 리포에 의해 정의되는 구조에서는, repoURL 같은 필드가 **yaml HEAD ↔ 클러스터 상태** 중 어느 한쪽이라도 어긋나면 self-heal이 옛 값으로 되돌린다. repoURL을 바꿀 때는 yaml, Application, credential secret 세 곳을 **같은 커밋 사이클 안에서** 일치시켜야 한다.
 

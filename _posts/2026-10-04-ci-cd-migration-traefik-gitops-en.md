@@ -174,13 +174,7 @@ ArgoCD continues watching the GitOps repos (case-study-ops, next-r3f-ops). Even 
 
 ### **Troubles Encountered During the Migration**
 
-**1. A NodePort-hardening firewall rule killed outbound traffic**
-
-To keep k3s NodePorts (30000+) off the internet, I added an iptables rule in the raw table's PREROUTING chain: "drop all TCP except 80/443." The rule also dropped **the reply packets of the server's own outbound connections** — PREROUTING is traversed by replies to outbound connections too. Worse, the raw table runs before conntrack, so even an `--ctstate ESTABLISHED` exception never matched.
-
-The result: github.com unreachable, Discord disconnected — and, mistaking this for an external network problem, I went as far as building a Cloudflare proxy workaround. The real fix was **moving the rule to the mangle table (which runs after conntrack) and letting ESTABLISHED replies pass**. The full debugging story deserves its own post.
-
-**2. GitOps self-reference and state consistency**
+**GitOps self-reference and state consistency**
 
 In a structure where an Application is defined by its own source repo, fields like repoURL revert to old values via self-heal if **the yaml HEAD and the cluster state** ever disagree. When changing a repoURL, the yaml, the Application, and the credential secret must be made consistent **within the same commit cycle**.
 
