@@ -118,4 +118,3 @@ This habit — "periodically re-run and confirm idempotency hasn't broken" — p
 
 Most of introducing IaC on a running server turned out to be not coding, but **honestly transcribing what the server's real state is into code** — and then verifying, twice, that the resulting code changes nothing (`changed=0`). Once those two are done, the server exists as code, not as memory.
 
-A follow-up post will cover actually running this playbook against a different machine (or an AWS instance) — the real migration scenario.
