@@ -72,6 +72,17 @@ server-ops/
     └── weekly_audit/     # weekly security audit (systemd timer)
 ```
 
+### The control node — *where* the playbook runs
+
+Ansible runs the playbook from a command post (the **control node**) and configures the servers listed in the inventory over SSH. The control node can be a dedicated server or just my laptop; the target servers need no Ansible install — only reachable SSH keys. The control node is the brain; targets are just hands.
+
+What I chose here:
+
+- **Now (one server)**: srv695066 controls itself (`ansible_connection: local`). Like keeping the remote next to the TV — for a single server, this is the simplest setup.
+- **On migration (option C)**: SSH into the new server, clone the repo, inject secrets, and run with `local` mode as-is. If/when several servers need managing (option B), I'd move the control node to a laptop and change the inventory host to an SSH target — the switch cost is one line of inventory.
+
+A design lesson here: ***where* the code executes is part of the IaC design.** With option C (the target server becomes the command post), the code revives with a single `git clone` even if the old server dies. With option B (command post separate from targets), the operational workflow survives any server change.
+
 ### Secrets never touch the repo
 
 The kube-prometheus-stack values file contains the Grafana admin password. Such files live outside the repo in `/root/server-ops-secrets/` (chmod 700) and are referenced by path at run time. Same for the Discord webhook URL. Same rule as "never store PATs in files": secrets are injected manually.

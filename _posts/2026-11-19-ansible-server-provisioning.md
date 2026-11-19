@@ -71,6 +71,17 @@ server-ops/
     └── weekly_audit/     # 주간 보안검사 (systemd timer)
 ```
 
+### 컨트롤 노드 — playbook은 "어디서" 실행되는가
+
+Ansible은 사령탑(**컨트롤 노드**)에서 playbook을 읽고, inventory에 적힌 서버들에 SSH로 접속해 세팅한다. 컨트롤 노드는 별도 서버 한 대여도, 내 노트북이어도 된다. 대상 서버에는 Ansible 설치가 필요 없고 SSH 키 접속만 되면 된다 — 컨트롤 노드가 브레인, 대상들은 팔뿐이다.
+
+이 작업에서 선택한 방식:
+
+- **현재(서버 1대)**: srv695066이 자기 자신을 컨트롤(`ansible_connection: local`). 리모컨을 TV 옆에 두고 TV를 조작하는 형태인데, 1대라면 이게 가장 단순하다.
+- **이사 시(C 방식)**: 새 서버에 접속해서 리포 clone → secrets 주입 → `local` 모드 그대로 실행. 컨트롤 노드를 옮겨갈 서버와 분리하고 싶다면(서버가 여러 대가 되면, B 방식) 노트북에 ansible을 설치하고 inventory의 호스트를 SSH 타겟으로 바꾸면 끝 — 전환 비용은 inventory 한 줄이다.
+
+설계 관점의 교훈 하나: **"코드가 어느 머신에서 실행되는가"도 IaC 설계의 일부**다. 이사하려는 대상 서버가 곧 사령탑이 되는 구성(C)이라면 서버가 사라져도 `git clone` 한 번으로 코드가 부활한다. 사령탑이 대상과 분리되어 있다면(B) 서버가 아무리 바뀌어도 운영 방식은 그대로다.
+
 ### Secrets은 절대 리포에 넣지 않는다
 
 kube-prometheus-stack values 파일에는 Grafana 관리자 비밀번호가 있다. 이런 파일은 리포 밖의 `/root/server-ops-secrets/`(chmod 700)에 두고 playbook 실행 시 경로로 참조한다. Discord webhook URL도 마찬가지다. **PAT 절대 저장 금지 규칙과 같은 맥락**으로, secrets은 수동 주입이 원칙이다.
