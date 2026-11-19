@@ -80,7 +80,7 @@ The kube-prometheus-stack values file contains the Grafana admin password. Such 
 
 A systemd timer (`weekly-audit.timer`, Sundays 03:00 UTC, `Persistent=true` so missed runs after reboots are caught up) runs a script whose checks mirror the past incidents precisely:
 
-1. **Docker container detection** — the healthy state of this server is *zero* containers. One running container is the incident pattern all over again.
+1. **Docker container detection** — every service on this server runs inside k3s (which uses its own containerd), so the healthy Docker container count is **zero**. The Docker daemon is essentially an empty shell; if a container shows up, it came up unintentionally — the incident pattern all over again.
 2. **Guard rule dual check** — both the live mangle rule and the persisted `rules.v4` copy. If either disappears after a reboot, it gets caught.
 3. **External NodePort scan** — curling NodePorts 30801 (Grafana) / 32085 (ArgoCD) *from the server itself* reports misleading results (self-connections traverse `lo`/hairpin). So the script asks an **external scanner (check-host.net)**: "can the public internet connect to this port?"
 4. **Control plane** — k3s/nodeport-guard service active, monitoring pods Running.
