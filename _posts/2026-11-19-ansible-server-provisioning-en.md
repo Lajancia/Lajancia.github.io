@@ -57,7 +57,7 @@ The second reason is a future migration. The current setup — k3s, iptables, sy
 
 ## 3. How I Use It — The Actual Setup
 
-The repo is [Lajancia/server-ops](https://github.com/Lajancia/server-ops):
+The repo layout looks like this (kept private in practice; shown as an example tree):
 
 ```
 server-ops/

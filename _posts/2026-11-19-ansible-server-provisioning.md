@@ -56,7 +56,7 @@ Ansible은 **서버의 상태를 코드(YAML)로 선언하고, 현재 상태를 
 
 ## 3. 사용 방법 — 실제 구성
 
-리포는 [Lajancia/server-ops](https://github.com/Lajancia/server-ops)다. 구성은 이렇다:
+리포 구성은 이렇다 (실제 리포는 프라이빗으로 운영 중이라 아래는 예시 트리):
 
 ```
 server-ops/
